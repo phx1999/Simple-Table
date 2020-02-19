@@ -1,0 +1,62 @@
+<!DOCTYPE    html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SUSTech Parking Record</title>
+    <link rel="stylesheet" type="text/css" href="table.css"/>
+    <script type="text/javascript" src="table.js"></script>
+</head>
+<body onload="initial()">
+<table border="1" cellpadding="10" cellspacing="5">
+    <caption id="a"><h2>SUSTech Parking Record</h2></caption>
+    <tr>
+        <th>License Plate Number</th>
+        <th>Entrance Number</th>
+        <th>Date</th>
+        <th>Arrival Time</th>
+        <th>Departure Time</th>
+        <th>Staff Name</th>
+        <th>Staff Number</th>
+        <th>Status</th>
+        <th>Delete</th>
+    </tr>
+    <tbody id="tbody" style="display:   none">
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td>
+            <input type="button" value="Delete" onclick="removeRow(this)"><br>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<center><input type="button" value="Add	a Record" onclick="OpenAdd()"></center><br>
+<div id="addrecord" >
+    <form name="form1">
+        License Plate Number:粤B <input type="text" name="License Plate Number"/><br>
+        Entrance Number: <input type="text" name="Entrance Number"/><br>
+        Date:
+        <select id="year" onchange="setMonth()"></select> year
+        <select id="month" onchange="setDay()"></select> month
+        <select id="day"></select> day <br>
+        Arrival Time:
+        <select id="ahour" onchange="setaminute()"></select>:
+        <select id="aminute"></select><br>
+        Departure Time:
+        <select id="dhour" onchange="setdminute()"></select>:
+        <select id="dminute" ></select><br>
+        Staff Name: <input type="text" name="Staff Name"/><br>
+        Staff Number: <input type="text" name="Staff Number"/><br>
+        Status: <input type="radio"  name="Status" value="In" checked/>In
+        <input  type="radio" name="Status" value="Out"/>Out<br>
+        <input type="button" value="Add" onclick="onClickAddRecord()"><br>
+        <input type="button" value="Close" onclick="CloseAdd()"><br>
+    </form>
+</div>
+</body>
+</html>
